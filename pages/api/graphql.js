@@ -28,7 +28,9 @@ const resolvers = {
   }
 };
 
-const apolloServer = new ApolloServer ({typeDefs, resolvers});
+const apolloServer = new ApolloServer ({
+  typeDefs, resolvers
+});
 
 const handler = apolloServer.createHandler({ path: '/api/graphql'});
 
