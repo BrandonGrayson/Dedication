@@ -1,5 +1,5 @@
 // chakra ui components
-import { Flex, Box, AspectRatio } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, useAccordionItemState } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 // react dependencies
@@ -25,7 +25,27 @@ export default function Index() {
    const realbig = "https://www.youtube.com/watch?v=ZyGojDe_DI0"
    const doubleUp = "https://www.youtube.com/watch?v=pwBFOuCrdr4"
    const right = "https://www.youtube.com/watch?v=heFh5aQjwtI"
-   
+
+   const [video, setVideo] = useState(rapN)
+
+   function randomSong () {
+     // move all songs into an array
+
+    
+     const album = [rapN, victory, last, young, dedication, blue, hussle, status, succa, keys, grinding, million, loaded, realbig, doubleUp, right];
+
+    //  const index = album[Math.floor(Math.random() * album.length)]
+
+    const song = setVideo(album[0])
+
+     console.log(song)
+
+     return song
+
+   }
+
+   console.log("this is random song" + randomSong)
+
 
   
   return (
@@ -37,12 +57,12 @@ export default function Index() {
 
         
         <AspectRatio maxW='1000px' ratio={1}>
-          <iframe title="naruto" src={rapN}  allowFullScreen />
+          <iframe title="naruto" src={video}  allowFullScreen />
         </AspectRatio>
 
       </Box>
 
-      <Box w='100%'h='400px' bgGradient='linear(to-r, green.200, pink.500)' />
+      
 
 
 
