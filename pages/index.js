@@ -24,7 +24,7 @@ export default function Index() {
   const doubleUp = "https://www.youtube.com/embed/pwBFOuCrdr4"
   const right = "https://www.youtube.com/embed/heFh5aQjwtI"
 
-  const [video, setVideo] = useState(right)
+  const [video, setVideo] = useState(rapN)
 
   function useHandleClick() {
     console.log("button clicked")
@@ -42,9 +42,9 @@ export default function Index() {
     return song
   }
 
-  // React.useEffect(() => {
-  //   setVideo(randomSong())
-  // }, [])
+  React.useEffect(() => {
+    setVideo(randomSong())
+  }, [])
 
   return (
     <Layout>
