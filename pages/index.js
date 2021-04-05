@@ -28,7 +28,7 @@ export default function Index() {
 
   function useHandleClick() {
     console.log("button clicked")
-    setVideo(victory);
+    setVideo(randomSong());
   }
 
   function randomSong() {
@@ -55,7 +55,7 @@ export default function Index() {
         </AspectRatio>
       </Box>
 
-      <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >Button</Button>
+      <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >New song</Button>
     </Layout>
   );
 }
