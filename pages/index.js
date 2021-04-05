@@ -26,8 +26,7 @@ export default function Index() {
   const doubleUp = "https://www.youtube.com/watch?v=pwBFOuCrdr4"
   const right = "https://www.youtube.com/watch?v=heFh5aQjwtI"
 
-  //  const [video, setVideo] = useState(rapN)
-
+  const [video, setVideo] = useState(rapN)
 
   function randomSong() {
     // move all songs into an array
@@ -35,17 +34,14 @@ export default function Index() {
 
     let song = album[Math.floor(Math.random() * album.length)];
 
-    console.log(song)
+    console.log("This is the song" + song)
 
     return song
   }
 
-  const [video, setVideo] = useState("")
-
-  React.useState(() => {
-    setVideo(randomSong())
-  }, [])
-
+  // React.useEffect(() => {
+  //   setVideo(randomSong())
+  // }, [])
 
   return (
     <Layout>
