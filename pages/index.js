@@ -1,32 +1,35 @@
 // chakra ui components
-import { Flex, Box, AspectRatio, useAccordionItemState } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, useAccordionItemState, Button } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 // react dependencies
 import React, { useState } from "react";
 
-// apollo server
-
 export default function Index() {
   // album songs
   const rapN = "https://www.youtube.com/embed/_4LsQ_kdLh0"
-  const victory = "https://www.youtube.com/watch?v=iYC9iMTC5QM"
-  const last = "https://www.youtube.com/watch?v=QM9xgHibvzM"
-  const young = "https://www.youtube.com/watch?v=3RlE03xOyV4"
-  const dedication = "https://www.youtube.com/watch?v=RXmfYM6dSFg"
-  const blue = "https://www.youtube.com/watch?v=r5ujo7icpH8"
-  const hussle = "https://www.youtube.com/watch?v=lxcrBGUYnxA"
-  const status = "https://www.youtube.com/watch?v=LAJkL4dZpzk"
-  const succa = "https://www.youtube.com/watch?v=rQEuF5QI0Q8"
-  const keys = "https://www.youtube.com/watch?v=eBYvq8CyNrA"
-  const grinding = "https://www.youtube.com/watch?v=AVrNHI4RdPM"
-  const million = "https://www.youtube.com/watch?v=5EDC_dAAqD0"
-  const loaded = "https://www.youtube.com/watch?v=CTyRUel1xFY"
-  const realbig = "https://www.youtube.com/watch?v=ZyGojDe_DI0"
-  const doubleUp = "https://www.youtube.com/watch?v=pwBFOuCrdr4"
-  const right = "https://www.youtube.com/watch?v=heFh5aQjwtI"
+  const victory = "https://www.youtube.com/embed/iYC9iMTC5QM"
+  const last = "https://www.youtube.com/embed/QM9xgHibvzM"
+  const young = "https://www.youtube.com/embed/3RlE03xOyV4"
+  const dedication = "https://www.youtube.com/embed/RXmfYM6dSFg"
+  const blue = "https://www.youtube.com/embed/r5ujo7icpH8"
+  const hussle = "https://www.youtube.com/embed/lxcrBGUYnxA"
+  const status = "https://www.youtube.com/embed/LAJkL4dZpzk"
+  const succa = "https://www.youtube.com/embed/rQEuF5QI0Q8"
+  const keys = "https://www.youtube.com/embed/eBYvq8CyNrA"
+  const grinding = "https://www.youtube.com/embed/AVrNHI4RdPM"
+  const million = "https://www.youtube.com/embed/5EDC_dAAqD0"
+  const loaded = "https://www.youtube.com/embed/CTyRUel1xFY"
+  const realbig = "https://www.youtube.com/embed/ZyGojDe_DI0"
+  const doubleUp = "https://www.youtube.com/embed/pwBFOuCrdr4"
+  const right = "https://www.youtube.com/embed/heFh5aQjwtI"
 
-  const [video, setVideo] = useState(rapN)
+  const [video, setVideo] = useState(right)
+
+  function useHandleClick() {
+    console.log("button clicked")
+    setVideo(victory);
+  }
 
   function randomSong() {
     // move all songs into an array
@@ -51,6 +54,8 @@ export default function Index() {
           <iframe title="naruto" src={video} allowFullScreen />
         </AspectRatio>
       </Box>
+
+      <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >Button</Button>
     </Layout>
   );
 }
