@@ -1,9 +1,14 @@
 // chakra ui components
-import { Flex, Box, AspectRatio, useAccordionItemState, Button } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, useAccordionItemState, Button, Image } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 // react dependencies
 import React, { useState } from "react";
+
+// album covers err here
+// import victoryAlbum from "../img/victory-lap.jpg"
+
+
 
 export default function Index() {
   // album songs
@@ -56,6 +61,10 @@ export default function Index() {
       </Box>
 
       <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >New song</Button>
+
+      <Box boxSize="sm">
+        <Image src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
+      </Box>
     </Layout>
   );
 }
