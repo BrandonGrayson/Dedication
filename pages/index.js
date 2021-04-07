@@ -6,7 +6,7 @@ import { Layout } from '@components/Layout';
 import React, { useState } from "react";
 
 // album covers err here
-// import victoryAlbum from "../img/victory-lap.jpg"
+// import victoryAlbum from "../public/img/victory-lap.jpg"
 
 
 
@@ -63,7 +63,7 @@ export default function Index() {
       <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >New song</Button>
 
       <Box boxSize="sm">
-        <Image src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" />
+        <Image src="../public/img/victory-lap.jpg" alt="Segun Adebayo" />
       </Box>
     </Layout>
   );
