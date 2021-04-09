@@ -1,7 +1,6 @@
 // chakra ui components
-import { Flex, Box, AspectRatio, Heading } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, Heading, HStack } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
-
 
 // react dependencies
 import React, { useState } from "react";
@@ -36,6 +35,7 @@ export default function Index() {
 
   // no pressure album songs
   const Effortless = "https://www.youtube.com/embed/YqUrHLc0DqM"
+  const stucc = "https://www.youtube.com/embed/YA60W05DJlQ"
 
   const [video, setVideo] = useState('')
 
@@ -69,9 +69,13 @@ export default function Index() {
       </Box>
 
       <Heading mb={3}>Discography</Heading>
+
+
+      <HStack>
       <Box boxSize="sm">
       <Image src="/img/victory-lap.jpg" onClick={useHandleClick} alt="me" width="150" height="150" />
       </Box>
+      </HStack>
     </Layout>
   );
 }
