@@ -71,10 +71,17 @@ export default function Index() {
       <Heading mb={3}>Discography</Heading>
 
 
-      <HStack>
-      <Box boxSize="sm">
+      <HStack spacing="24px">
+        
+      <Box  bg="red">
       <Image src="/img/victory-lap.jpg" onClick={useHandleClick} alt="me" width="150" height="150" />
       </Box>
+
+      <Box  bg="red">
+      <Image src="/img/no-pressure.jpg" alt="me" width="150" height="150" />
+      </Box>
+
+
       </HStack>
     </Layout>
   );
