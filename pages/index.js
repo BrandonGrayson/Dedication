@@ -68,7 +68,7 @@ export default function Index() {
       <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >New song</Button>
 
       <Box boxSize="sm">
-      <Image src="/victory-lap.jpg" alt="me" width="64" height="64" />
+      <Image src="/img/victory-lap.jpg" alt="me" width="64" height="64" />
       </Box>
     </Layout>
   );
