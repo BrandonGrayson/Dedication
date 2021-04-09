@@ -16,7 +16,7 @@ import Image from 'next/image'
 
 
 export default function Index() {
-  // album songs
+  // victory lap album songs
   const rapN = "https://www.youtube.com/embed/_4LsQ_kdLh0"
   const victory = "https://www.youtube.com/embed/iYC9iMTC5QM"
   const last = "https://www.youtube.com/embed/QM9xgHibvzM"
@@ -33,6 +33,9 @@ export default function Index() {
   const realbig = "https://www.youtube.com/embed/ZyGojDe_DI0"
   const doubleUp = "https://www.youtube.com/embed/pwBFOuCrdr4"
   const right = "https://www.youtube.com/embed/heFh5aQjwtI"
+
+  // no pressure album songs
+  const Effortless = "https://www.youtube.com/embed/YqUrHLc0DqM"
 
   const [video, setVideo] = useState('')
 
@@ -65,6 +68,7 @@ export default function Index() {
         </AspectRatio>
       </Box>
 
+      <Heading mb={3}>Discography</Heading>
       <Box boxSize="sm">
       <Image src="/img/victory-lap.jpg" onClick={useHandleClick} alt="me" width="150" height="150" />
       </Box>
