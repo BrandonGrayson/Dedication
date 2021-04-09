@@ -1,5 +1,5 @@
 // chakra ui components
-import { Flex, Box, AspectRatio, useAccordionItemState, Button, } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, Heading } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 
@@ -58,14 +58,12 @@ export default function Index() {
 
   return (
     <Layout>
-      <h1>"Neighborhood" Nipsey Hussle</h1>
+      <Heading mb={3}>"Neighborhood" Nipsey Hussle</Heading>
       <Box>
-        <AspectRatio maxW='1000px' ratio={1}>
+        <AspectRatio maxW='1000px' mb={3} ratio={1}>
           <iframe title="naruto" src={video} allowFullScreen />
         </AspectRatio>
       </Box>
-
-      <Button colorScheme='teal' onClick={useHandleClick} variant='ghost' >New song</Button>
 
       <Box boxSize="sm">
       <Image src="/img/victory-lap.jpg" onClick={useHandleClick} alt="me" width="150" height="150" />
