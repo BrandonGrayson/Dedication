@@ -4,7 +4,6 @@ import { Layout } from '@components/Layout';
 
 // react dependencies
 import React, { useState } from "react";
-import next from 'next';
 
 import Image from 'next/image'
 
@@ -44,9 +43,25 @@ export default function Index() {
     setVideo(randomSong());
   }
 
+  function noPressureClick() {
+    console.log("button clicked")
+    setVideo(randomSongNP());
+  }
+
   function randomSong() {
     // move all songs into an array
     const album = [rapN, victory, last, young, dedication, blue, hussle, status, succa, keys, grinding, million, loaded, realbig, doubleUp, right];
+
+    let song = album[Math.floor(Math.random() * album.length)];
+
+    console.log("This is the song" + song)
+
+    return song
+  }
+
+  function randomSongNP() {
+    // move all songs into an array
+    const album = [Effortless, stucc];
 
     let song = album[Math.floor(Math.random() * album.length)];
 
@@ -72,13 +87,13 @@ export default function Index() {
 
 
       <HStack spacing="24px">
-        
+
       <Box  bg="red">
       <Image src="/img/victory-lap.jpg" onClick={useHandleClick} alt="me" width="150" height="150" />
       </Box>
 
       <Box  bg="red">
-      <Image src="/img/no-pressure.jpg" alt="me" width="150" height="150" />
+      <Image src="/img/no-pressure.jpg" onClick={noPressureClick} alt="me" width="150" height="150" />
       </Box>
 
 
