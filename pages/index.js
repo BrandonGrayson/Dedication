@@ -1,104 +1,203 @@
+import React from "react";
 // chakra ui components
 import { Flex, Box, AspectRatio, Heading, HStack } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
-
 // react dependencies
-import React, { useState } from "react";
 
 import Image from 'next/image'
 
+const albumData =
+  [
+    {
+      title: "Victory Lap",
+      songs: [
+        {
+          title: "Rap N",
+          link: "https://www.youtube.com/embed/_4LsQ_kdLh0",
+        },
+        {
+          title: "Victory",
+          link: "https://www.youtube.com/embed/iYC9iMTC5QM"
+        },
+        {
+          title: "Last",
+          link: "https://www.youtube.com/embed/QM9xgHibvzM"
+        },
+        {
+          title: "Young",
+          link: "https://www.youtube.com/embed/3RlE03xOyV4"
+        },
+        {
+          title: "Dedication",
+          link: "https://www.youtube.com/embed/RXmfYM6dSFg"
+        },
+        {
+          title: "Blue",
+          link: "https://www.youtube.com/embed/r5ujo7icpH8"
+        },
+        {
+          title: "Hussle",
+          link: "https://www.youtube.com/embed/lxcrBGUYnxA"
+        },
+        {
+          title: "Status",
+          link: "https://www.youtube.com/embed/LAJkL4dZpzk"
+        },
+        {
+          title: "Succa",
+          link: "https://www.youtube.com/embed/rQEuF5QI0Q8"
+        },
+        {
+          title: "Keys",
+          link: "https://www.youtube.com/embed/eBYvq8CyNrA"
+        },
+        {
+          title: "grinding",
+          link: "https://www.youtube.com/embed/AVrNHI4RdPM"
+        },
+        {
+          title: "million",
+          link: "https://www.youtube.com/embed/5EDC_dAAqD0"
+        },
+        {
+          title: "loaded",
+          link: "https://www.youtube.com/embed/CTyRUel1xFY"
+        },
+        {
+          title: "realbig",
+          link: "https://www.youtube.com/embed/ZyGojDe_DI0"
+        },
+        {
+          title: "doubleUp",
+          link: "https://www.youtube.com/embed/pwBFOuCrdr4"
+        },
+        {
+          title: "right",
+          link: "https://www.youtube.com/embed/heFh5aQjwtI"
+        },
 
-// album covers err here
-// import victoryAlbum from "../public/img/victory-lap.jpg"
+      ],
+    },
+    {
+      title: "No Pressure",
+      songs: [
+        {
+          title: "effortless",
+          links: "https://www.youtube.com/embed/YqUrHLc0DqM"
+        },
+        {
+          title: "stucc",
+          links: "https://www.youtube.com/embed/YA60W05DJlQ"
+        }
+      ]
+    }
+  ]
 
+
+function VideoPlayer({ albums }) {
+  console.log(albums)
+  const [randomSong, setRandomSong] = React.useState('');
+
+  React.useEffect(() => {
+    // an array to store all song data
+    let allSongs = [];
+    // take in album pull of songs
+    const songs = albumData.filter((song) => {
+      // console.log(songs)
+
+      // return [...allSongs, ...songs]
+
+      // return song
+    })
+  }, [])
+
+  //   setRandomSong(// set the random song from the songs array )
+
+  //   // push it into an array
+
+  //   // strip the songs from the albumData array
+
+  // }, [albums])
+
+  // when the components loads -- pick a random song from any album
+  function pickRandomSong(songs) {
+    // we want to take the albumData array and pull all song arrays off of each album
+
+    // we will need to use some array methods and go through each object -- pulling out the songs array -- and combining them into a new array
+  }
+
+  // to do this, we need to combine each songs array on the album objects 
+  // const songs = // some array method that takes all songs arrays and combines them 
+  return (
+    <Flex direction="column">
+      Video Player
+
+      <Button onClick={() => pickRandomSong(songs)}>Randomize</Button>
+
+    </Flex>
+  )
+}
 
 
 export default function Index() {
   // victory lap album songs
-  const rapN = "https://www.youtube.com/embed/_4LsQ_kdLh0"
-  const victory = "https://www.youtube.com/embed/iYC9iMTC5QM"
-  const last = "https://www.youtube.com/embed/QM9xgHibvzM"
-  const young = "https://www.youtube.com/embed/3RlE03xOyV4"
-  const dedication = "https://www.youtube.com/embed/RXmfYM6dSFg"
-  const blue = "https://www.youtube.com/embed/r5ujo7icpH8"
-  const hussle = "https://www.youtube.com/embed/lxcrBGUYnxA"
-  const status = "https://www.youtube.com/embed/LAJkL4dZpzk"
-  const succa = "https://www.youtube.com/embed/rQEuF5QI0Q8"
-  const keys = "https://www.youtube.com/embed/eBYvq8CyNrA"
-  const grinding = "https://www.youtube.com/embed/AVrNHI4RdPM"
-  const million = "https://www.youtube.com/embed/5EDC_dAAqD0"
-  const loaded = "https://www.youtube.com/embed/CTyRUel1xFY"
-  const realbig = "https://www.youtube.com/embed/ZyGojDe_DI0"
-  const doubleUp = "https://www.youtube.com/embed/pwBFOuCrdr4"
-  const right = "https://www.youtube.com/embed/heFh5aQjwtI"
-
-  // no pressure album songs
-  const Effortless = "https://www.youtube.com/embed/YqUrHLc0DqM"
-  const stucc = "https://www.youtube.com/embed/YA60W05DJlQ"
-
-  const [video, setVideo] = useState('')
-
-  function useHandleClick() {
-    console.log("button clicked")
-    setVideo(randomSong());
-  }
-
-  function noPressureClick() {
-    console.log("button clicked")
-    setVideo(randomSongNP());
-  }
-
-  function randomSong() {
-    // move all songs into an array
-    const album = [rapN, victory, last, young, dedication, blue, hussle, status, succa, keys, grinding, million, loaded, realbig, doubleUp, right];
-
-    let song = album[Math.floor(Math.random() * album.length)];
-
-    console.log("This is the song" + song)
-
-    return song
-  }
-
-  function randomSongNP() {
-    // move all songs into an array
-    const album = [Effortless, stucc];
-
-    let song = album[Math.floor(Math.random() * album.length)];
-
-    console.log("This is the song" + song)
-
-    return song
-  }
+  const [albums, setAlbums] = React.useState([]);
 
   React.useEffect(() => {
-    setVideo(randomSong())
+    setTimeout(() => {
+      setAlbums(albumData)
+    }, 2000)
+
   }, [])
 
   return (
     <Layout>
-      <Heading mb={3}>"Neighborhood" Nipsey Hussle</Heading>
-      <Box>
-        <AspectRatio maxW='1000px' mb={3} ratio={1}>
-          <iframe title="naruto" src={video} allowFullScreen />
-        </AspectRatio>
-      </Box>
-
-      <Heading mb={3}>Discography</Heading>
-
-
-      <HStack spacing="24px">
-
-      <Box  bg="red">
-      <Image src="/img/victory-lap.jpg" onClick={useHandleClick} alt="me" width="150" height="150" />
-      </Box>
-
-      <Box  bg="red">
-      <Image src="/img/no-pressure.jpg" onClick={noPressureClick} alt="me" width="150" height="150" />
-      </Box>
-
-
-      </HStack>
+      <VideoPlayer albums={albums} />
     </Layout>
-  );
+  )
 }
 
+
+
+
+// no pressure album songs
+
+
+
+
+
+  // function useHandleClick() {
+  //   console.log("button clicked")
+  //   setVideo(randomSong());
+  // }
+
+  // function noPressureClick() {
+  //   console.log("button clicked")
+  //   setVideo(randomSongNP());
+  // }
+
+  // function randomSong() {
+  //   // move all songs into an array
+  //   const album = [rapN, victory, last, young, dedication, blue, hussle, status, succa, keys, grinding, million, loaded, realbig, doubleUp, right];
+
+  //   let song = album[Math.floor(Math.random() * album.length)];
+
+  //   console.log("This is the song" + song)
+
+  //   return song
+  // }
+
+  // function randomSongNP() {
+  //   // move all songs into an array
+  //   const album = [Effortless, stucc];
+
+  //   let song = album[Math.floor(Math.random() * album.length)];
+
+  //   console.log("This is the song" + song)
+
+  //   return song
+  // }
+
+  // React.useEffect(() => {
+  //   setVideo(randomSong())
+  // }, [])
