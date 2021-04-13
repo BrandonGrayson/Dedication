@@ -1,10 +1,12 @@
 import React from "react";
 // chakra ui components
-import { Flex, Box, AspectRatio, Heading, HStack } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, Heading, HStack, Button } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 // react dependencies
 
 import Image from 'next/image'
+
+
 
 const albumData =
   [
@@ -96,14 +98,21 @@ const albumData =
 
 function VideoPlayer({ albums }) {
   console.log(albums)
-  const [randomSong, setRandomSong] = React.useState('');
+  // a default song to start with
+  const defaultSong = "https://www.youtube.com/embed/_4LsQ_kdLh0"
+  // set a variable random song
+  const [randomSong, setRandomSong] = React.useState(defaultSong);
 
   React.useEffect(() => {
     // an array to store all song data
     let allSongs = [];
     // take in album pull of songs
-    const songs = albumData.filter((song) => {
-      // console.log(songs)
+    const songs = albumData.filter((album) => {
+      console.log(album)
+
+      // looking to access each individual song property and store it in the allSongs array
+
+
 
       // return [...allSongs, ...songs]
 
@@ -131,6 +140,14 @@ function VideoPlayer({ albums }) {
   return (
     <Flex direction="column">
       Video Player
+
+      <AspectRatio maxW="560px" ratio={1}>
+        <iframe
+          title="rap"
+          src={defaultSong}
+          allowFullScreen
+        />
+      </AspectRatio>
 
       <Button onClick={() => pickRandomSong(songs)}>Randomize</Button>
 
