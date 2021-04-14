@@ -107,9 +107,20 @@ function VideoPlayer({ albums }) {
     // an array to store all song data
     let allSongs = [];
     // take in album pull of songs
-    const songs = albumData.filter((album) => {
+    albumData.map((song) => {
       console.log('Album Console.log underneath')
-      console.log(album.title)
+      console.log(song.songs)
+      const songsToLoopOver = song.songs
+      console.log(songsToLoopOver)
+      songsToLoopOver.map((song) => {
+        console.log("This is each Song Property") 
+        console.log(song)
+      })
+      // for (i = 0; i < songsToLoopOver.length; i++) {
+      //   let linksToAdd = songsToLoopOver[i].link
+      //   console.log("ADD These LInks")
+      //   console.log(linksToAdd)
+      // }
       // need to further destructure album to access each individual song link
 
       // looking to access each individual song property and store it in the allSongs array
@@ -166,7 +177,7 @@ export default function Index() {
   React.useEffect(() => {
     setTimeout(() => {
       setAlbums(albumData)
-    }, 2000)
+    }, 8000)
 
   }, [])
 
