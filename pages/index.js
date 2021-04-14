@@ -85,11 +85,11 @@ const albumData =
       songs: [
         {
           title: "effortless",
-          links: "https://www.youtube.com/embed/YqUrHLc0DqM"
+          link: "https://www.youtube.com/embed/YqUrHLc0DqM"
         },
         {
           title: "stucc",
-          links: "https://www.youtube.com/embed/YA60W05DJlQ"
+          link: "https://www.youtube.com/embed/YA60W05DJlQ"
         }
       ]
     }
@@ -113,8 +113,11 @@ function VideoPlayer({ albums }) {
       const songsToLoopOver = song.songs
       console.log(songsToLoopOver)
       songsToLoopOver.map((song) => {
-        console.log("This is each Song Property") 
-        console.log(song)
+        // console.log("This is each Song Property") 
+        // console.log(song)
+        const songLinks = song.link
+        console.log("These are the song links")
+        console.log(songLinks)
       })
       // for (i = 0; i < songsToLoopOver.length; i++) {
       //   let linksToAdd = songsToLoopOver[i].link
