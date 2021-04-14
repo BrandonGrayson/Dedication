@@ -108,9 +108,12 @@ function VideoPlayer({ albums }) {
     let allSongs = [];
     // take in album pull of songs
     const songs = albumData.filter((album) => {
-      console.log(album)
+      console.log('Album Console.log underneath')
+      console.log(album.title)
+      // need to further destructure album to access each individual song link
 
       // looking to access each individual song property and store it in the allSongs array
+
 
 
 
