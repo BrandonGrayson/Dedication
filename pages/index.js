@@ -108,16 +108,24 @@ function VideoPlayer({ albums }) {
     let allSongs = [];
     // take in album pull of songs
     albumData.map((song) => {
-      console.log('Album Console.log underneath')
-      console.log(song.songs)
+      // console.log('Album Console.log underneath')
+      // console.log(song.songs)
+      // further access to the array of objects to get to links
       const songsToLoopOver = song.songs
-      console.log(songsToLoopOver)
+      // console.log(songsToLoopOver)
       songsToLoopOver.map((song) => {
         // console.log("This is each Song Property") 
         // console.log(song)
+        // able to access the link property and save it to a variable
         const songLinks = song.link
-        console.log("These are the song links")
-        console.log(songLinks)
+        // console.log("These are the song links")
+        // console.log(songLinks)
+        // push links into allSongs array
+        console.log("All Songs Array")
+        console.log(allSongs)
+        return allSongs.push(songLinks)
+        
+        // 
       })
       // for (i = 0; i < songsToLoopOver.length; i++) {
       //   let linksToAdd = songsToLoopOver[i].link
