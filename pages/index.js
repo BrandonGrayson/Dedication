@@ -1,12 +1,10 @@
+// react dependencies
 import React from "react";
 // chakra ui components
 import { Flex, Box, AspectRatio, Heading, HStack, Button } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
-// react dependencies
 
 import Image from 'next/image'
-
-
 
 const albumData =
   [
@@ -123,24 +121,16 @@ function VideoPlayer({ albums }) {
         // push links into allSongs array
         console.log("All Songs Array")
         console.log(allSongs)
-        return allSongs.push(songLinks)
-        
+        allSongs.push(songLinks)
+        // get to a random index of the allSongs array
         // 
       })
-      // for (i = 0; i < songsToLoopOver.length; i++) {
-      //   let linksToAdd = songsToLoopOver[i].link
-      //   console.log("ADD These LInks")
-      //   console.log(linksToAdd)
-      // }
-      // need to further destructure album to access each individual song link
-
-      // looking to access each individual song property and store it in the allSongs array
-
-
-
-
       // return [...allSongs, ...songs]
-
+      let songToPlay = allSongs[Math.floor(Math.random() * allSongs.length)];
+      console.log("Song To Play")
+      console.log(songToPlay)
+      // setRandomSong(songToPlay)
+      return allSongs
       // return song
     })
   }, [])
