@@ -92,42 +92,46 @@ const albumData =
     }
   ]
 
+
+
 function VideoPlayer({ albums }) {
-  console.log(albums)
-  // a default song to start with
-  const defaultSong = "https://www.youtube.com/embed/_4LsQ_kdLh0"
-  // set a variable random song
-  const [allSongs, setAllSongs] = React.useState([]);
-  const [randomSong, setRandomSong] = React.useState(defaultSong);
-  // effects for the video player 
-  React.useEffect(() => {
+  function pickRandomDefault(albumData) {
+    let songs = [];
     albumData.map((album) => {
       // songs array to start for the inital component render
-      let songs = [];
+      let arr = [];
       // spread the album.songs into the songs array  
-      songs = [...album.songs]
-      // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs
-      setAllSongs(prev => [...prev, ...songs]);
-      // check and see whats inside all songs
-      // console.log("Samuel L. Jackson Says: This is All the Songs MuthaFucka!!!")
-      // console.log(allSongs)
+      arr = [...album.songs]
+      // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs      
+      songs = [...songs, ...arr]
     })
-  }, []);
 
-  console.log({ allSongs })
-  console.log({ allSongs })
-
-
-
-  // when the components loads -- pick a random song from any album
-
-  function pickRandomSong(randomSongs) {
-    // we want to take the albumData array and pull all song arrays off of each album
-    // we will need to use some array methods and go through each object -- pulling out the songs array -- and combining them into a new array
+    return songs[Math.floor(Math.random() * songs.length)]
   }
 
-  // to do this, we need to combine each songs array on the album objects 
-  // const songs = // some array method that takes all songs arrays and combines them 
+  // a default song to start with
+  const defaultSong = "https://www.youtube.com/embed/_4LsQ_kdLh0"
+  // set a variable random song 
+  const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumData));
+  console.log({ randomSong })
+  // effects for the video player 
+
+  function pickRandomSong(albumData) {
+    let songs = []
+    albumData.map((album) => {
+      let arr = []
+      // songs array to start for the inital component render      
+      // spread the album.songs into the songs array  
+      arr = [...album.songs]
+      // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs      
+      songs = [...songs, ...arr]
+    })
+
+
+    setRandomSong(songs[Math.floor(Math.random() * songs.length)])
+  }
+
+
   return (
     <Flex direction="column">
       <Text> Video Player </Text>
@@ -140,15 +144,17 @@ function VideoPlayer({ albums }) {
         <h1>{song.title}</h1>
       ))} */}
 
+      <h1>{randomSong.title}</h1>
+
       <AspectRatio maxW="560px" ratio={1}>
         <iframe
-          title="rap"
-          src={defaultSong}
+          title={randomSong.title}
+          src={randomSong.link}
           allowFullScreen
         />
       </AspectRatio>
 
-      <Button onClick={() => pickRandomSong(songs)}>Randomize</Button>
+      <Button onClick={() => pickRandomSong(albumData)}>Randomize</Button>
 
     </Flex>
   )
