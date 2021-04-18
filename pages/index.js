@@ -97,41 +97,35 @@ function VideoPlayer({ albums }) {
   // a default song to start with
   const defaultSong = "https://www.youtube.com/embed/_4LsQ_kdLh0"
   // set a variable random song
+  const [allSongs, setAllSongs] = React.useState([]);
   const [randomSong, setRandomSong] = React.useState(defaultSong);
+
+
 
   React.useEffect(() => {
     // an array to store all song data
-    let allSongs = [];
+
     // take in album pull of songs
-    albumData.map((song) => {
-      // console.log('Album Console.log underneath')
-      // console.log(song.songs)
-      // further access to the array of objects to get to links
-      const songsToLoopOver = song.songs
-      // console.log(songsToLoopOver)
-      songsToLoopOver.map((song) => {
-        // console.log("This is each Song Property") 
-        // console.log(song)
-        // able to access the link property and save it to a variable
-        const songLinks = song.link
-        // console.log("These are the song links")
-        // console.log(songLinks)
-        // push links into allSongs array
-        console.log("All Songs Array")
-        console.log(allSongs)
-        allSongs.push(songLinks)
-        // get to a random index of the allSongs array
-        // 
-      })
+    albumData.map((album) => {
+
+      let songs = [];
+
+      songs = [...album.songs]
+
+      setAllSongs(prev => [...songs, ...prev]);
       // return [...allSongs, ...songs]
       // setRandomSong(songToPlay)
       // let songToPlay = allSongs[Math.floor(Math.random() * allSongs.length)];
       // console.log("Song To Play")
       // console.log(songToPlay)
-      return allSongs
+
       // return song
+
+      // setAllSongs(prevData => [...prevData, ...songs])
     })
   }, []);
+
+
 
   //   setRandomSong(// set the random song from the songs array )
 
@@ -156,7 +150,11 @@ function VideoPlayer({ albums }) {
   // const songs = // some array method that takes all songs arrays and combines them 
   return (
     <Flex direction="column">
-      <Text> Video Player </Text> 
+      <Text> Video Player </Text>
+
+      {allSongs.map(song => (
+        <h1>{song.title}</h1>
+      ))}
 
       <AspectRatio maxW="560px" ratio={1}>
         <iframe
