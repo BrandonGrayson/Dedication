@@ -1,10 +1,10 @@
 // react dependencies
 import React from "react";
 // chakra ui components
-import { Flex, Box, AspectRatio, Heading, HStack, Button } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
-import Image from 'next/image'
+import Image from 'next/image';
 
 const albumData =
   [
@@ -75,7 +75,6 @@ const albumData =
           title: "right",
           link: "https://www.youtube.com/embed/heFh5aQjwtI"
         },
-
       ],
     },
     {
@@ -92,7 +91,6 @@ const albumData =
       ]
     }
   ]
-
 
 function VideoPlayer({ albums }) {
   console.log(albums)
@@ -126,14 +124,14 @@ function VideoPlayer({ albums }) {
         // 
       })
       // return [...allSongs, ...songs]
-      let songToPlay = allSongs[Math.floor(Math.random() * allSongs.length)];
-      console.log("Song To Play")
-      console.log(songToPlay)
       // setRandomSong(songToPlay)
+      // let songToPlay = allSongs[Math.floor(Math.random() * allSongs.length)];
+      // console.log("Song To Play")
+      // console.log(songToPlay)
       return allSongs
       // return song
     })
-  }, [])
+  }, []);
 
   //   setRandomSong(// set the random song from the songs array )
 
@@ -144,9 +142,13 @@ function VideoPlayer({ albums }) {
   // }, [albums])
 
   // when the components loads -- pick a random song from any album
-  function pickRandomSong(songs) {
+  function pickRandomSong(randomSongs) {
     // we want to take the albumData array and pull all song arrays off of each album
-
+    // let randomSongs = ''
+    // console.log("Random song button clicked")
+    // let randomSongs = allSongs[Math.floor(Math.random() * allSongs.length)];
+    // console.log("Song To Play")
+    // console.log(songToPlay)
     // we will need to use some array methods and go through each object -- pulling out the songs array -- and combining them into a new array
   }
 
@@ -154,7 +156,7 @@ function VideoPlayer({ albums }) {
   // const songs = // some array method that takes all songs arrays and combines them 
   return (
     <Flex direction="column">
-      Video Player
+      <Text> Video Player </Text> 
 
       <AspectRatio maxW="560px" ratio={1}>
         <iframe
