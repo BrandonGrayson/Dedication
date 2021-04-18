@@ -99,50 +99,30 @@ function VideoPlayer({ albums }) {
   // set a variable random song
   const [allSongs, setAllSongs] = React.useState([]);
   const [randomSong, setRandomSong] = React.useState(defaultSong);
-
-
-
+  // effects for the video player 
   React.useEffect(() => {
-    // an array to store all song data
-
-    // take in album pull of songs
     albumData.map((album) => {
-
+      // songs array to start for the inital component render
       let songs = [];
-
+      // spread the album.songs into the songs array  
       songs = [...album.songs]
-
-      setAllSongs(prev => [...songs, ...prev]);
-      // return [...allSongs, ...songs]
-      // setRandomSong(songToPlay)
-      // let songToPlay = allSongs[Math.floor(Math.random() * allSongs.length)];
-      // console.log("Song To Play")
-      // console.log(songToPlay)
-
-      // return song
-
-      // setAllSongs(prevData => [...prevData, ...songs])
+      // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs
+      setAllSongs(prev => [...prev, ...songs]);
+      // check and see whats inside all songs
+      // console.log("Samuel L. Jackson Says: This is All the Songs MuthaFucka!!!")
+      // console.log(allSongs)
     })
   }, []);
 
+  console.log({ allSongs })
+  console.log({ allSongs })
 
 
-  //   setRandomSong(// set the random song from the songs array )
-
-  //   // push it into an array
-
-  //   // strip the songs from the albumData array
-
-  // }, [albums])
 
   // when the components loads -- pick a random song from any album
+
   function pickRandomSong(randomSongs) {
     // we want to take the albumData array and pull all song arrays off of each album
-    // let randomSongs = ''
-    // console.log("Random song button clicked")
-    // let randomSongs = allSongs[Math.floor(Math.random() * allSongs.length)];
-    // console.log("Song To Play")
-    // console.log(songToPlay)
     // we will need to use some array methods and go through each object -- pulling out the songs array -- and combining them into a new array
   }
 
@@ -152,9 +132,13 @@ function VideoPlayer({ albums }) {
     <Flex direction="column">
       <Text> Video Player </Text>
 
+      {/* {allSongs.map(song => (
+        <h1>{song.title}</h1>
+      ))} */}
+      {/* 
       {allSongs.map(song => (
         <h1>{song.title}</h1>
-      ))}
+      ))} */}
 
       <AspectRatio maxW="560px" ratio={1}>
         <iframe
