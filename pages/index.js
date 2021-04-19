@@ -95,8 +95,12 @@ const albumData =
 
 
 function VideoPlayer({ albums }) {
+  const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumData));
+  // function to pick a random default song
   function pickRandomDefault(albumData) {
+    // empty array to start for song links
     let songs = [];
+    // loop over album data array to access album objects
     albumData.map((album) => {
       // songs array to start for the inital component render
       let arr = [];
@@ -105,33 +109,27 @@ function VideoPlayer({ albums }) {
       // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs      
       songs = [...songs, ...arr]
     })
-
+    // return songs at random index
     return songs[Math.floor(Math.random() * songs.length)]
   }
-
-  // a default song to start with
-  const defaultSong = "https://www.youtube.com/embed/_4LsQ_kdLh0"
   // set a variable random song 
-  const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumData));
   console.log({ randomSong })
-  // effects for the video player 
-
+  // function to pick a random song on button click
   function pickRandomSong(albumData) {
+    // empty songs array to start
     let songs = []
+    // loop over albumData array to acces album objects
     albumData.map((album) => {
-      let arr = []
-      // songs array to start for the inital component render      
+      // an 
+      let arr = []   
       // spread the album.songs into the songs array  
       arr = [...album.songs]
       // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs      
       songs = [...songs, ...arr]
     })
-
-
+    // set song to songs arr at a random index
     setRandomSong(songs[Math.floor(Math.random() * songs.length)])
   }
-
-
   return (
     <Flex direction="column">
       <Text> Video Player </Text>
@@ -159,7 +157,6 @@ function VideoPlayer({ albums }) {
     </Flex>
   )
 }
-
 
 export default function Index() {
   // victory lap album songs
