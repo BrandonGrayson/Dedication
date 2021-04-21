@@ -90,8 +90,10 @@ const albumData =
     }
   ]
 
-export default function VideoPlayer({ albums }) {
+export default function VideoPlayer() {
     const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumData));
+     // victory lap album songs
+  const [albums, setAlbums] = React.useState([]);
     // function to pick a random default song
     function pickRandomDefault(albumData) {
       // empty array to start for song links
@@ -126,6 +128,13 @@ export default function VideoPlayer({ albums }) {
       // set song to songs arr at a random index
       setRandomSong(songs[Math.floor(Math.random() * songs.length)])
     }
+
+    React.useEffect(() => {
+        setTimeout(() => {
+          setAlbums(albumData)
+        }, 8000)
+    
+      }, [])
     return (
       <Flex direction="column">
         <Text> Video Player </Text>

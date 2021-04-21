@@ -11,19 +11,9 @@ import Image from 'next/image';
 
 
 export default function Index() {
-  // victory lap album songs
-  const [albums, setAlbums] = React.useState([]);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setAlbums(albumData)
-    }, 8000)
-
-  }, [])
-
   return (
     <Layout>
-      <VideoPlayer albums={albums} />
+      <VideoPlayer  />
     </Layout>
   )
 }
