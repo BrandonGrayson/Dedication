@@ -130,19 +130,19 @@ export default function VideoPlayer() {
         setRandomSong(songs[Math.floor(Math.random() * songs.length)])
     }
 
-    React.useEffect(() => {
-        setTimeout(() => {
-            setAlbums(albumData)
-        }, 8000)
+    // React.useEffect(() => {
+    //     setTimeout(() => {
+    //         setAlbums(albumData)
+    //     }, 8000)
 
-    }, [])
+    // }, [])
     return (
         <Flex direction="column">
             <Text> Video Player </Text>
 
             <h1>{randomSong.title}</h1>
 
-            <AspectRatio maxW="560px" ratio={1}>
+            <AspectRatio mb={2} maxW="560px" ratio={1}>
                 <iframe
                     title={randomSong.title}
                     src={randomSong.link}
@@ -150,7 +150,9 @@ export default function VideoPlayer() {
                 />
             </AspectRatio>
 
-            <Button onClick={() => pickRandomSong(albumData)}>Randomize</Button>
+            <Button mb={3} onClick={() => pickRandomSong(albumData)}>Randomize</Button>
+
+            <Text mb={2} fontSize="50px" >Discography</Text>
 
             <VictoryLap />
 
