@@ -89,7 +89,7 @@ const albumData =
                 }
             ]
         }
-]
+    ]
 
 export default function VideoPlayer() {
     const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumData));
@@ -137,7 +137,7 @@ export default function VideoPlayer() {
 
     // }, [])
     return (
-        <Flex direction="column">
+        <Box w='100%' bg='tomato'>
             <Text> Video Player </Text>
 
             <h1>{randomSong.title}</h1>
@@ -152,11 +152,12 @@ export default function VideoPlayer() {
 
             <Button mb={3} onClick={() => pickRandomSong(albumData)}>Randomize</Button>
 
-            <Text mb={2} fontSize="50px" >Discography</Text>
+            <Box w='100%' bg="tomato" >
+                <Text mb={2} fontSize="50px" >Discography</Text>
 
-            <VictoryLap />
-
-        </Flex>
+                <VictoryLap />
+            </Box>
+        </Box>
     )
 }
 
