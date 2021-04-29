@@ -4,6 +4,12 @@ import VictoryLap from "./VictoryLap";
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
+// css
+
+const divStyle = {
+    backgroundColor: 'blue'
+}
+
 // fake database
 const albumData =
     [
@@ -136,9 +142,11 @@ export default function VideoPlayer() {
     //     }, 8000)
 
     // }, [])
+
     return (
-        <Box w='100%' bg='tomato'>
+        <Box >
             <Text> Video Player </Text>
+            
 
             <h1>{randomSong.title}</h1>
 
@@ -152,12 +160,12 @@ export default function VideoPlayer() {
 
             <Button mb={3} onClick={() => pickRandomSong(albumData)}>Randomize</Button>
 
-            <Box w='100%' bg="tomato" >
+            <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
 
                 <VictoryLap />
             </Box>
-        </Box>
+        </Box> 
     )
 }
 
