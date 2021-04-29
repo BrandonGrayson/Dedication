@@ -150,7 +150,7 @@ export default function VideoPlayer() {
 
             <h1>{randomSong.title}</h1>
 
-            <AspectRatio mb={2} maxW="560px" ratio={1}>
+            <AspectRatio mb={2} w="100vw" h='60vh' ratio={1}>
                 <iframe
                     title={randomSong.title}
                     src={randomSong.link}
