@@ -146,11 +146,7 @@ export default function VideoPlayer() {
     return (
         <Box >
             <Text> Video Player </Text>
-            
-
-            <h1>{randomSong.title}</h1>
-
-            <AspectRatio mb={2} w="100vw" h='60vh' ratio={1}>
+            <AspectRatio mb={2} w="100vw" h='80vh' ratio={1}>
                 <iframe
                     title={randomSong.title}
                     src={randomSong.link}
