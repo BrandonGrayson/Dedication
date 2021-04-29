@@ -4,6 +4,44 @@ import VictoryLap from "./VictoryLap";
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
+// albums with videos
+const albumWithVideos = [
+    {
+        title: "Songs With Vidos",
+        songs: [
+            {
+                title: "Rap N",
+                link: "https://www.youtube.com/embed/_4LsQ_kdLh0",
+                id: 1
+            },
+            {
+                title: "Victory",
+                link: "https://www.youtube.com/embed/iYC9iMTC5QM",
+                id: 2
+            },
+            {
+                title: "Last",
+                link: "https://www.youtube.com/embed/QM9xgHibvzM",
+                id: 3
+            },
+            {
+                title: "Status",
+                link: "https://www.youtube.com/embed/LAJkL4dZpzk",
+                id: 8
+            },
+            {
+                title: "Status",
+                link: "https://www.youtube.com/embed/LAJkL4dZpzk",
+                id: 8
+            },
+            {
+                title: "doubleUp",
+                link: "https://www.youtube.com/embed/pwBFOuCrdr4",
+                id: 15
+            },
+        ]
+    }
+]
 
 // fake database
 const albumData =
