@@ -4,11 +4,6 @@ import VictoryLap from "./VictoryLap";
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
-// css
-
-const divStyle = {
-    backgroundColor: 'blue'
-}
 
 // fake database
 const albumData =
@@ -19,66 +14,82 @@ const albumData =
                 {
                     title: "Rap N",
                     link: "https://www.youtube.com/embed/_4LsQ_kdLh0",
+                    id: 1
                 },
                 {
                     title: "Victory",
-                    link: "https://www.youtube.com/embed/iYC9iMTC5QM"
+                    link: "https://www.youtube.com/embed/iYC9iMTC5QM",
+                    id: 2
                 },
                 {
                     title: "Last",
-                    link: "https://www.youtube.com/embed/QM9xgHibvzM"
+                    link: "https://www.youtube.com/embed/QM9xgHibvzM",
+                    id: 3
                 },
                 {
                     title: "Young",
-                    link: "https://www.youtube.com/embed/3RlE03xOyV4"
+                    link: "https://www.youtube.com/embed/3RlE03xOyV4",
+                    id: 4
                 },
                 {
                     title: "Dedication",
-                    link: "https://www.youtube.com/embed/RXmfYM6dSFg"
+                    link: "https://www.youtube.com/embed/RXmfYM6dSFg",
+                    id: 5
                 },
                 {
                     title: "Blue",
-                    link: "https://www.youtube.com/embed/r5ujo7icpH8"
+                    link: "https://www.youtube.com/embed/r5ujo7icpH8",
+                    id: 6
                 },
                 {
                     title: "Hussle",
-                    link: "https://www.youtube.com/embed/lxcrBGUYnxA"
+                    link: "https://www.youtube.com/embed/lxcrBGUYnxA",
+                    id: 7
                 },
                 {
                     title: "Status",
-                    link: "https://www.youtube.com/embed/LAJkL4dZpzk"
+                    link: "https://www.youtube.com/embed/LAJkL4dZpzk",
+                    id: 8
                 },
                 {
                     title: "Succa",
-                    link: "https://www.youtube.com/embed/rQEuF5QI0Q8"
+                    link: "https://www.youtube.com/embed/rQEuF5QI0Q8",
+                    id: 9
                 },
                 {
                     title: "Keys",
-                    link: "https://www.youtube.com/embed/eBYvq8CyNrA"
+                    link: "https://www.youtube.com/embed/eBYvq8CyNrA",
+                    id: 10
                 },
                 {
                     title: "grinding",
-                    link: "https://www.youtube.com/embed/AVrNHI4RdPM"
+                    link: "https://www.youtube.com/embed/AVrNHI4RdPM",
+                    id: 11
                 },
                 {
                     title: "million",
-                    link: "https://www.youtube.com/embed/5EDC_dAAqD0"
+                    link: "https://www.youtube.com/embed/5EDC_dAAqD0",
+                    id: 12
                 },
                 {
                     title: "loaded",
-                    link: "https://www.youtube.com/embed/CTyRUel1xFY"
+                    link: "https://www.youtube.com/embed/CTyRUel1xFY",
+                    id: 13
                 },
                 {
                     title: "realbig",
-                    link: "https://www.youtube.com/embed/ZyGojDe_DI0"
+                    link: "https://www.youtube.com/embed/ZyGojDe_DI0",
+                    id: 14
                 },
                 {
                     title: "doubleUp",
-                    link: "https://www.youtube.com/embed/pwBFOuCrdr4"
+                    link: "https://www.youtube.com/embed/pwBFOuCrdr4",
+                    id: 15
                 },
                 {
                     title: "right",
-                    link: "https://www.youtube.com/embed/heFh5aQjwtI"
+                    link: "https://www.youtube.com/embed/heFh5aQjwtI",
+                    id: 16
                 },
             ],
         },
@@ -87,11 +98,13 @@ const albumData =
             songs: [
                 {
                     title: "effortless",
-                    link: "https://www.youtube.com/embed/YqUrHLc0DqM"
+                    link: "https://www.youtube.com/embed/YqUrHLc0DqM",
+                    id: 17
                 },
                 {
                     title: "stucc",
-                    link: "https://www.youtube.com/embed/YA60W05DJlQ"
+                    link: "https://www.youtube.com/embed/YA60W05DJlQ",
+                    id: 18
                 }
             ]
         }
