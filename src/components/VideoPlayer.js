@@ -7,7 +7,7 @@ import { Layout } from '@components/Layout';
 // albums with videos
 const albumWithVideos = [
     {
-        title: "Songs With Vidos",
+        title: "Songs With Videos",
         songs: [
             {
                 title: "Rap N",
@@ -149,15 +149,15 @@ const albumData =
     ]
 
 export default function VideoPlayer() {
-    const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumData));
+    const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumWithVideos));
     // victory lap album songs
     const [albums, setAlbums] = React.useState([]);
     // function to pick a random default song
-    function pickRandomDefault(albumData) {
+    function pickRandomDefault(albumWithVideos) {
         // empty array to start for song links
         let songs = [];
         // loop over album data array to access album objects
-        albumData.map((album) => {
+        albumWithVideos.map((album) => {
             // songs array to start for the inital component render
             let arr = [];
             // spread the album.songs into the songs array  
