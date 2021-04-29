@@ -27,17 +27,17 @@ const albumWithVideos = [
             {
                 title: "Status",
                 link: "https://www.youtube.com/embed/LAJkL4dZpzk",
-                id: 8
+                id: 4
             },
             {
                 title: "Status",
                 link: "https://www.youtube.com/embed/LAJkL4dZpzk",
-                id: 8
+                id: 5
             },
             {
                 title: "doubleUp",
                 link: "https://www.youtube.com/embed/pwBFOuCrdr4",
-                id: 15
+                id: 6
             },
         ]
     }
