@@ -4,6 +4,11 @@ import VictoryLap from "./VictoryLap";
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
+// css styles
+const leftStyle = {
+
+}
+
 // albums with videos
 const albumWithVideos = [
     {
@@ -197,7 +202,12 @@ export default function VideoPlayer() {
     return (
         <Box >
             {/* headline */}
-            <Text fontSize='50px' textAlign='center'>  Nipsey Hussle </Text>
+            <Flex justify='space-between' w='100%' >
+                <Text>All Money In</Text>
+                <Text>Nipsey Hussle</Text>
+                <Text>No Money Out</Text>
+            </Flex>
+            {/* <Text fontSize='50px' textAlign='center'> All Money In Nipsey Hussle No Money Out</Text> */}
             {/* VideoPlayer */}
             <AspectRatio mb={2} w="100vw" h='80vh' ratio={1}>
                 <iframe
@@ -215,7 +225,7 @@ export default function VideoPlayer() {
 
                 <VictoryLap />
             </Box>
-        </Box> 
+        </Box>
     )
 }
 
