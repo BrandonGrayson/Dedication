@@ -30,13 +30,13 @@ const albumWithVideos = [
                 id: 4
             },
             {
-                title: "Status",
-                link: "https://www.youtube.com/embed/LAJkL4dZpzk",
+                title: "doubleUp",
+                link: "https://www.youtube.com/embed/pwBFOuCrdr4",
                 id: 5
             },
             {
-                title: "doubleUp",
-                link: "https://www.youtube.com/embed/pwBFOuCrdr4",
+                title: "grinding",
+                link: "https://www.youtube.com/embed/AVrNHI4RdPM",
                 id: 6
             },
         ]
@@ -196,7 +196,7 @@ export default function VideoPlayer() {
 
     return (
         <Box >
-            <Text> Video Player </Text>
+            <Text fontSize='50px' textAlign='center'>  Nipsey Hussle </Text>
             <AspectRatio mb={2} w="100vw" h='80vh' ratio={1}>
                 <iframe
                     title={randomSong.title}
