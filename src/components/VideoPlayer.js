@@ -203,9 +203,9 @@ export default function VideoPlayer() {
         <Box >
             {/* headline */}
             <Flex justify='space-between' w='100%' >
-                <Text>All Money In</Text>
-                <Text>Nipsey Hussle</Text>
-                <Text>No Money Out</Text>
+                <Text mt={3} fontSize='25px'>All Money In</Text>
+                <Text fontSize='50px'>Nipsey Hussle</Text>
+                <Text mt={3} fontSize='25px'>No Money Out</Text>
             </Flex>
             {/* <Text fontSize='50px' textAlign='center'> All Money In Nipsey Hussle No Money Out</Text> */}
             {/* VideoPlayer */}
