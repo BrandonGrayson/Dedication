@@ -196,7 +196,9 @@ export default function VideoPlayer() {
 
     return (
         <Box >
+            {/* headline */}
             <Text fontSize='50px' textAlign='center'>  Nipsey Hussle </Text>
+            {/* VideoPlayer */}
             <AspectRatio mb={2} w="100vw" h='80vh' ratio={1}>
                 <iframe
                     title={randomSong.title}
@@ -204,9 +206,10 @@ export default function VideoPlayer() {
                     allowFullScreen
                 />
             </AspectRatio>
-
+            {/* Random Song Button */}
             <Button mb={3} onClick={() => pickRandomSong(albumData)}>Randomize</Button>
 
+            {/* Discography Section */}
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
 
