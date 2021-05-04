@@ -1,6 +1,7 @@
 // react dependencies
 import React from "react";
-import VideoPlayer from "../src/components/VideoPlayer"
+import VideoPlayer from "../src/components/VideoPlayer";
+import VictoryLap from "../src/components/VictoryLap";
 // chakra ui components
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';

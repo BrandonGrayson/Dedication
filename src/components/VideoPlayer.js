@@ -4,11 +4,6 @@ import VictoryLap from "./VictoryLap";
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
-// css styles
-const leftStyle = {
-
-}
-
 // albums with videos
 const albumWithVideos = [
     {
@@ -154,6 +149,7 @@ const albumData =
     ]
 
 export default function VideoPlayer() {
+    // setting the random song when component initially renders
     const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumWithVideos));
     // victory lap album songs
     const [albums, setAlbums] = React.useState([]);
@@ -223,7 +219,7 @@ export default function VideoPlayer() {
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
 
-                <VictoryLap />
+                <VictoryLap updateSong={} />
             </Box>
         </Box>
     )
