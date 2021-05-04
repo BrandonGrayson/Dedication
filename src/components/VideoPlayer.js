@@ -149,9 +149,9 @@ const albumData =
     ]
 
 export default function VideoPlayer() {
-    // setting the random song when component initially renders
-    const [randomSong, setRandomSong] = React.useState(() => pickRandomDefault(albumWithVideos));
-    // victory lap album songs
+    // setting the state of song to be a random song when component initially renders
+    const [Song, setSong] = React.useState(() => pickRandomDefault(albumWithVideos));
+    // set the state of song to be an empty song string
     const [albums, setAlbums] = React.useState([]);
     // function to pick a random default song
     function pickRandomDefault(albumWithVideos) {
@@ -169,8 +169,8 @@ export default function VideoPlayer() {
         // return songs at random index
         return songs[Math.floor(Math.random() * songs.length)]
     }
-    // set a variable random song 
-    console.log({ randomSong })
+    // checking to see the value of random song
+    console.log({ Song })
     // function to pick a random song on button click
     function pickRandomSong(albumData) {
         // empty songs array to start
@@ -184,16 +184,9 @@ export default function VideoPlayer() {
             // setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs      
             songs = [...songs, ...arr]
         })
-        // set song to songs arr at a random index
-        setRandomSong(songs[Math.floor(Math.random() * songs.length)])
+        // set song to random index of songs arr 
+        setSong(songs[Math.floor(Math.random() * songs.length)])
     }
-
-    // React.useEffect(() => {
-    //     setTimeout(() => {
-    //         setAlbums(albumData)
-    //     }, 8000)
-
-    // }, [])
 
     return (
         <Box >
@@ -207,8 +200,8 @@ export default function VideoPlayer() {
             {/* VideoPlayer */}
             <AspectRatio mb={2} w="100vw" h='80vh' ratio={1}>
                 <iframe
-                    title={randomSong.title}
-                    src={randomSong.link}
+                    title={Song.title}
+                    src={Song.link}
                     allowFullScreen
                 />
             </AspectRatio>
@@ -219,7 +212,7 @@ export default function VideoPlayer() {
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
 
-                <VictoryLap updateSong={} />
+                <VictoryLap />
             </Box>
         </Box>
     )
