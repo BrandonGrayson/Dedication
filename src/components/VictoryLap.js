@@ -2,7 +2,7 @@ import React from "react";
 import Image from 'next/image';
 
 
-export default function VictoryLap() {
+export default function VictoryLap({props}) {
     return (
         <div>
             <Image
