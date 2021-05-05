@@ -213,6 +213,7 @@ export default function VideoPlayer() {
                 <Text mb={2} fontSize="50px" >Discography</Text>
 
                 <VictoryLap updateSong={setSong} />
+                
             </Box>
         </Box>
     )
