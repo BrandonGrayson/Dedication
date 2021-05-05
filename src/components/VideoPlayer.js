@@ -4,6 +4,94 @@ import VictoryLap from "./VictoryLap";
 import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
+const victoryLap = [
+    {
+        title: "Victory Lap Album",
+        songs: [
+            {
+                title: "Rap N",
+                link: "https://www.youtube.com/embed/_4LsQ_kdLh0",
+                id: 1
+            },
+            {
+                title: "Victory",
+                link: "https://www.youtube.com/embed/iYC9iMTC5QM",
+                id: 2
+            },
+            {
+                title: "Last",
+                link: "https://www.youtube.com/embed/QM9xgHibvzM",
+                id: 3
+            },
+            {
+                title: "Young",
+                link: "https://www.youtube.com/embed/3RlE03xOyV4",
+                id: 4
+            },
+            {
+                title: "Dedication",
+                link: "https://www.youtube.com/embed/RXmfYM6dSFg",
+                id: 5
+            },
+            {
+                title: "Blue",
+                link: "https://www.youtube.com/embed/r5ujo7icpH8",
+                id: 6
+            },
+            {
+                title: "Hussle",
+                link: "https://www.youtube.com/embed/lxcrBGUYnxA",
+                id: 7
+            },
+            {
+                title: "Status",
+                link: "https://www.youtube.com/embed/LAJkL4dZpzk",
+                id: 8
+            },
+            {
+                title: "Succa",
+                link: "https://www.youtube.com/embed/rQEuF5QI0Q8",
+                id: 9
+            },
+            {
+                title: "Keys",
+                link: "https://www.youtube.com/embed/eBYvq8CyNrA",
+                id: 10
+            },
+            {
+                title: "grinding",
+                link: "https://www.youtube.com/embed/AVrNHI4RdPM",
+                id: 11
+            },
+            {
+                title: "million",
+                link: "https://www.youtube.com/embed/5EDC_dAAqD0",
+                id: 12
+            },
+            {
+                title: "loaded",
+                link: "https://www.youtube.com/embed/CTyRUel1xFY",
+                id: 13
+            },
+            {
+                title: "realbig",
+                link: "https://www.youtube.com/embed/ZyGojDe_DI0",
+                id: 14
+            },
+            {
+                title: "doubleUp",
+                link: "https://www.youtube.com/embed/pwBFOuCrdr4",
+                id: 15
+            },
+            {
+                title: "right",
+                link: "https://www.youtube.com/embed/heFh5aQjwtI",
+                id: 16
+            },
+        ]
+    }
+]
+
 // albums with videos
 const albumWithVideos = [
     {
@@ -188,6 +276,23 @@ export default function VideoPlayer() {
         setSong(songs[Math.floor(Math.random() * songs.length)])
     }
 
+    // update the song function take in the albumData
+    const updateTheSong = (victoryLap) => {
+        // initialize an empty array
+        let songs = []
+        // loop over the albumData
+        victoryLap.map((album) => {
+            // set arr to empty array
+            let arr = []
+            // spread the albmum. songs into the array
+            arr = [...album.songs]
+            // spread the songs and arr
+            songs = [...songs, ...arr]
+            // setSong
+            setSong(songs[Math.floor(Math.random() * songs.length)])
+        })
+    }
+
     return (
         <Box >
             {/* headline */}
@@ -212,7 +317,7 @@ export default function VideoPlayer() {
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
 
-                <VictoryLap updateSong={setSong} />
+                <VictoryLap updateSong={updateTheSong} />
                 
             </Box>
         </Box>

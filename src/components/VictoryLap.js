@@ -3,14 +3,11 @@ import Image from 'next/image';
 import next from "next";
 
 
-export default function VictoryLap({props}) {
-    const updateTheSong = () => {
-        const nextSong = "https://www.youtube.com/embed/iYC9iMTC5QM"
-        updateSong(nextSong)
-    }
+export default function VictoryLap(props) {
+
     return (
         console.log(props),
-        <div onClick={updateTheSong}>
+        <div onClick={props.updateSong}>
             
             <Image
                 src="/img/victory-lap.jpg"
