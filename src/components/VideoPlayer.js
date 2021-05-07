@@ -214,9 +214,6 @@ export default function VideoPlayer() {
             setSong(songs[Math.floor(Math.random() * songs.length)])
         })
     }
-
-
-
     return (
         <Box >
             {/* headline */}
@@ -240,9 +237,6 @@ export default function VideoPlayer() {
             {/* Discography Section */}
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
-
-                <VictoryLap updateSong={updateTheSong} />
-                
             </Box>
         </Box>
     )

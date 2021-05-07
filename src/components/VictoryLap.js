@@ -14,7 +14,7 @@ export default function VictoryLap(props) {
                 alt="Picture of the author"
                 width={200}
                 height={200}
-            />
+            />f
         </div>
     )
 }
