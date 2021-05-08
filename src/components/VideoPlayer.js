@@ -228,10 +228,12 @@ export default function VideoPlayer() {
             {/* Discography Section */}
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
-                   {albumData.map(album => {
-                       console.log(album)
-                   return <h1> {album.albumCover}</h1>
-                   })}
+                {albumData.map(album => {
+                    console.log(album)
+                    return <AspectRatio maxW="400px" ratio={4 / 3}>
+                        <Image src={album.albumCover} alt="naruto" objectFit="cover" />
+                    </AspectRatio>
+                })}
             </Box>
         </Box>
     )
