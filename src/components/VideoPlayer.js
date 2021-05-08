@@ -198,11 +198,12 @@ export default function VideoPlayer() {
         setSong(songs[Math.floor(Math.random() * songs.length)])
     }
     // function to access the album cover artwork
-    function albumCover(albumData) {
-        albumData.map(album => {
-            console.log(album)
-        })
-    }
+    // function albumCover(albumData) {
+    //     albumData.map(album => {
+    //         console.log(album)
+
+    //     })
+    // }
 
     return (
         <Box >
@@ -227,7 +228,10 @@ export default function VideoPlayer() {
             {/* Discography Section */}
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
-               
+                   {albumData.map(album => {
+                       console.log(album)
+                   return <h1> {album.albumCover}</h1>
+                   })}
             </Box>
         </Box>
     )
