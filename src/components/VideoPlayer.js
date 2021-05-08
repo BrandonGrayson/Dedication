@@ -198,30 +198,12 @@ export default function VideoPlayer() {
         setSong(songs[Math.floor(Math.random() * songs.length)])
     }
 
-    // update the song function take in the albumData
-    const updateTheSong = (victoryLap) => {
-        // initialize an empty array
-        let songs = []
-        // loop over the albumData
-        victoryLap.map((album) => {
-            // set arr to empty array
-            let arr = []
-            // spread the albmum. songs into the array
-            arr = [...album.songs]
-            // spread the songs and arr
-            songs = [...songs, ...arr]
-            // setSong
-            setSong(songs[Math.floor(Math.random() * songs.length)])
-        })
-    }
-
-    const name = "Victory Lap"
     return (
         <Box >
             {/* headline */}
             <Flex justify='space-between' w='100%' >
                 <Text mt={3} fontSize='25px'>All Money In</Text>
-    <Text fontSize='50px'>Nipsey Hussle {name}</Text>
+                <Text fontSize='50px'>Nipsey Hussle </Text>
                 <Text mt={3} fontSize='25px'>No Money Out</Text>
             </Flex>
             {/* <Text fontSize='50px' textAlign='center'> All Money In Nipsey Hussle No Money Out</Text> */}
