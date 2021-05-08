@@ -1,7 +1,7 @@
 // dependencies
 import React from "react";
 import VictoryLap from "./VictoryLap";
-import { Flex, Box, AspectRatio, Heading, HStack, Button, Text } from '@chakra-ui/react';
+import { Flex, Box, AspectRatio, Image, Button, Text } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 // albums with videos
@@ -197,6 +197,12 @@ export default function VideoPlayer() {
         // set song to random index of songs arr 
         setSong(songs[Math.floor(Math.random() * songs.length)])
     }
+    // function to access the album cover artwork
+    function albumCover(albumData) {
+        albumData.map(album => {
+            console.log(album)
+        })
+    }
 
     return (
         <Box >
@@ -221,6 +227,7 @@ export default function VideoPlayer() {
             {/* Discography Section */}
             <Box>
                 <Text mb={2} fontSize="50px" >Discography</Text>
+               
             </Box>
         </Box>
     )
