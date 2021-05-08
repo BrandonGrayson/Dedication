@@ -214,12 +214,14 @@ export default function VideoPlayer() {
             setSong(songs[Math.floor(Math.random() * songs.length)])
         })
     }
+
+    const name = "Victory Lap"
     return (
         <Box >
             {/* headline */}
             <Flex justify='space-between' w='100%' >
                 <Text mt={3} fontSize='25px'>All Money In</Text>
-                <Text fontSize='50px'>Nipsey Hussle</Text>
+    <Text fontSize='50px'>Nipsey Hussle {name}</Text>
                 <Text mt={3} fontSize='25px'>No Money Out</Text>
             </Flex>
             {/* <Text fontSize='50px' textAlign='center'> All Money In Nipsey Hussle No Money Out</Text> */}
