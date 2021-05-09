@@ -225,13 +225,16 @@ export default function VideoPlayer() {
 				</Text>
 			</Box>
 
-			<Box flexDirection="row">
+			<Box flexDirection="row" bg="red">
 				{albumData.map((album) => {
 					console.log(album);
 					return (
+                        <>
 						<AspectRatio mb={3} maxW="400px" maxh="400px" ratio={3 / 3}>
-							<Image src={album.albumCover} alt="naruto" objectFit="cover" />
+							<Image src={album.albumCover} alt="album artwork" objectFit="cover" />
 						</AspectRatio>
+                    <Button>{album.title}</Button>
+                        </>
 					);
 				})}
 			</Box>
