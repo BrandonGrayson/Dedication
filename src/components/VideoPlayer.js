@@ -141,9 +141,39 @@ const albumData = [
 				id: 17
 			},
 			{
+				title: 'None of This',
+				link: 'https://www.youtube.com/embed/3oyjOwcy5rg',
+				id: 18
+			},
+			{
+				title: 'Never Gone Know',
+				link: 'https://www.youtube.com/embed/hnQEBeRqMPc',
+				id: 19
+			},
+			{
+				title: 'Thats How It Go (Love & Wa)',
+				link: 'https://www.youtube.com/embed/mBbk-ZaqOLM',
+				id: 20
+			},
+			{
+				title: 'Pain',
+				link: 'https://www.youtube.com/embed/mkVkemMZZ88',
+				id: 21
+			},
+			{
+				title: 'Skurr',
+				link: 'https://www.youtube.com/embed/YZZOjKa6Tg8',
+				id: 22
+			},
+			{
+				title: 'Blueprint',
+				link: 'https://www.youtube.com/embed/wwESzdRGOgE',
+				id: 23
+			},
+			{
 				title: 'stucc',
 				link: 'https://www.youtube.com/embed/YA60W05DJlQ',
-				id: 18
+				id: 24
 			}
 		]
 	}
