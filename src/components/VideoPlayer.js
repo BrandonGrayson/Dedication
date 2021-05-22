@@ -182,7 +182,7 @@ const albumData = [
 	}
 ];
 
-export default function VideoPlayer({ props }) {
+export default function VideoPlayer() {
 	// setting the state of song to be a random song when component initially renders
 	const [ song, setSong ] = React.useState(() => pickRandomDefault(albumWithVideos));
 	// set the state of song to be an empty song string
@@ -234,6 +234,10 @@ export default function VideoPlayer({ props }) {
 		setSong(songs[Math.floor(Math.random() * songs.length)]);
 	}
 
+	function reloadPage() {
+		window.location.reload()
+	}
+
 	return (
 		<Box>
 			{/* headline */}
@@ -253,6 +257,10 @@ export default function VideoPlayer({ props }) {
 			{/* Random Song Button */}
 			<Button mb={3} onClick={() => pickRandomSong(albumData)}>
 				Randomize
+			</Button>
+
+			<Button ml={2} onClick={reloadPage}>
+				Video
 			</Button>
 
 			{/* Discography Section */}
