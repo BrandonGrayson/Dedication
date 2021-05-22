@@ -4,6 +4,9 @@ import VictoryLap from './VictoryLap';
 import { Flex, Box, AspectRatio, Image, Button, Text, HStack } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
+// components
+// import Button from "./Button";
+
 // albums with videos
 const albumWithVideos = [
 	{
@@ -176,10 +179,13 @@ const albumData = [
 				id: 24
 			}
 		]
+	},
+	{
+
 	}
 ];
 
-export default function VideoPlayer() {
+export default function VideoPlayer({ props }) {
 	// setting the state of song to be a random song when component initially renders
 	const [ song, setSong ] = React.useState(() => pickRandomDefault(albumWithVideos));
 	// set the state of song to be an empty song string
@@ -210,22 +216,27 @@ export default function VideoPlayer() {
 	}
 	// checking to see the value of random song
 	console.log({ song });
+	// checking to see what props are passed
 	// function to pick a random song on button click
 	function pickRandomSong(albumData) {
 		// empty songs array to start
 		let songs = [];
 		// loop over albumData array to acces album objects
 		albumData.map((album) => {
-			// an
+			console.log(album)
 			let arr = [];
 			// spread the album.songs into the songs array
+			// console.log("Album songs")
+			// console.log(album.songs)
 			arr = [ ...album.songs ];
+			console.log(arr)
 			// setAllSongs keep data from previous songs create a new array inside spread the songs array and previous songs
 			songs = [ ...songs, ...arr ];
 		});
 		// set song to random index of songs arr
 		setSong(songs[Math.floor(Math.random() * songs.length)]);
 	}
+
 	return (
 		<Box>
 			{/* headline */}
@@ -263,7 +274,8 @@ export default function VideoPlayer() {
 						<AspectRatio mb={3} maxW="400px" maxh="400px" ratio={3 / 3}>
 							<Image src={album.albumCover} alt="album artwork" objectFit="cover" />
 						</AspectRatio>
-                    <Button>{album.title}</Button>
+
+                    <Button onClick={() => pickRandomSong(albumData)} songs={album.songs}>{album.title}</Button>
                         </>
 					);
 				})}
