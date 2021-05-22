@@ -179,9 +179,6 @@ const albumData = [
 				id: 24
 			}
 		]
-	},
-	{
-
 	}
 ];
 
@@ -249,7 +246,6 @@ export default function VideoPlayer({ props }) {
 					No Money Out
 				</Text>
 			</Flex>
-			{/* <Text fontSize='50px' textAlign='center'> All Money In Nipsey Hussle No Money Out</Text> */}
 			{/* VideoPlayer */}
 			<AspectRatio mb={2} w="100vw" h="80vh" ratio={1}>
 				<iframe title={song.title} src={song.link} allowFullScreen />
@@ -280,8 +276,6 @@ export default function VideoPlayer({ props }) {
 					);
 				})}
 			</Box>
-
-
 		</Box>
 	);
 }
