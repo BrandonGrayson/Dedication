@@ -235,7 +235,12 @@ export default function VideoPlayer() {
 	}
 
 	function reloadPage() {
+		console.log("Tony Montana Says 'Ok, I'M RELOOOAADDDINNNGGG!!!!!!!!!!!!!!!'")
 		window.location.reload()
+	}
+
+	function albumSongs(album) {
+		console.log(album)
 	}
 
 	return (
@@ -275,11 +280,11 @@ export default function VideoPlayer() {
 					console.log(album);
 					return (
                         <>
-						<AspectRatio mb={3} maxW="400px" maxh="400px" ratio={3 / 3}>
+						<AspectRatio key={album} mb={3} maxW="400px" maxh="400px" ratio={3 / 3}>
 							<Image src={album.albumCover} alt="album artwork" objectFit="cover" />
 						</AspectRatio>
 
-                    <Button onClick={() => pickRandomSong(albumData)} songs={album.songs}>{album.title}</Button>
+                    <Button key={album.title} onClick={() => albumSongs(album)} songs={album.songs}>{album.title}</Button>
                         </>
 					);
 				})}
