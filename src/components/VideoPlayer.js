@@ -241,6 +241,12 @@ export default function VideoPlayer() {
 
 	function albumSongs(album) {
 		console.log(album)
+		let arr = []
+
+		arr = [...album.songs]
+		console.log(arr)
+
+		setSong(arr[Math.floor(Math.random() * arr.length)])
 	}
 
 	return (
