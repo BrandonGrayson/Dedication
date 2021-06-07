@@ -12,7 +12,7 @@ export function Layout({ title, description, twitter, openGraph, children }) {
         openGraph={openGraph}
       />
       <Navbar />
-      <Box w='100vw' bg='blue'>{children}</Box>
+      <Box w='100vw' >{children}</Box>
     </>
   );
 }

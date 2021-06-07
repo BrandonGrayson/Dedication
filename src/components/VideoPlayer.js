@@ -1,8 +1,6 @@
 // dependencies
 import React from 'react';
-import VictoryLap from './VictoryLap';
 import { Flex, Box, AspectRatio, Image, Button, Text, HStack } from '@chakra-ui/react';
-import { Layout } from '@components/Layout';
 
 // components
 // import Button from "./Button";
@@ -179,6 +177,15 @@ const albumData = [
 				id: 24
 			}
 		]
+	},
+	{
+		title: 'Slauson Boy 2',
+		albumCover: '/img/slauson-boy2.jpg',
+		songs: [
+			{
+				title: ''
+			}
+		]
 	}
 ];
 
@@ -211,10 +218,12 @@ export default function VideoPlayer() {
 		// return songs at random index
 		return songs[Math.floor(Math.random() * songs.length)];
 	}
+
 	// checking to see the value of random song
 	console.log({ song });
 	// checking to see what props are passed
 	// function to pick a random song on button click
+
 	function pickRandomSong(albumData) {
 		// empty songs array to start
 		let songs = [];
@@ -281,17 +290,17 @@ export default function VideoPlayer() {
 				</Text>
 			</Box>
 
-			<Box flexDirection="row" bg="red">
+			<Box>
 				{albumData.map((album) => {
 					console.log(album);
 					return (
-                        <>
-						<AspectRatio key={album} mb={3} maxW="400px" maxh="400px" ratio={3 / 3}>
+                        <Box w='100%' h='100%' bg='red'>
+						<AspectRatio key={album} mb={3} maxW="200px" maxh="200px" ratio={3 / 3}>
 							<Image src={album.albumCover} alt="album artwork" objectFit="cover" />
 						</AspectRatio>
 
                     <Button key={album.title} onClick={() => albumSongs(album)} songs={album.songs}>{album.title}</Button>
-                        </>
+                       </Box>
 					);
 				})}
 			</Box>
