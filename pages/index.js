@@ -1,6 +1,6 @@
 // react dependencies
 import React from "react";
-import Homepage from "../src/components/Homepage";
+import Header from "../src/components/Header";
 // chakra ui components
 import { Layout } from '@components/Layout';
 
@@ -10,7 +10,9 @@ import { Layout } from '@components/Layout';
 export default function Index() {
   return (
     <Layout>
-      <Homepage />
+      <Header />
+
+      <h1>Don't Just Watch... Experience!!!</h1>
     </Layout>
   )
 }
